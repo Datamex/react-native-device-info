@@ -542,6 +542,9 @@ export default {
   getFreeDiskStorage: function() {
     return RNDeviceInfo.freeDiskStorage;
   },
+  getTotalDiskStorage: function() {
+    return RNDeviceInfo.totalDiskStorage;
+  },
   getBatteryLevel: function() {
     return RNDeviceInfo.getBatteryLevel();
   },

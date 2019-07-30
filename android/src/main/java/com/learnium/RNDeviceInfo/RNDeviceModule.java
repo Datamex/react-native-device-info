@@ -330,6 +330,17 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public BigInteger getTotalDiskStorage() {
+    try {
+      StatFs root = new StatFs(Environment.getExternalStorageDirectory().getAbsolutePath());
+      return BigInteger.valueOf(root.getBlockCount()).multiply(BigInteger.valueOf(root.getBlockSize()));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  @ReactMethod
   public BigInteger getFreeDiskStorage() {
     try {
       StatFs external = new StatFs(Environment.getExternalStorageDirectory().getAbsolutePath());
@@ -560,6 +571,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
     constants.put("carrier", this.getCarrier());
     constants.put("totalDiskCapacity", this.getTotalDiskCapacity());
     constants.put("freeDiskStorage", this.getFreeDiskStorage());
+    constants.put("totalDiskStorage", this.getTotalDiskStorage());
     constants.put("installReferrer", this.getInstallReferrer());
 
     if (reactContext != null &&

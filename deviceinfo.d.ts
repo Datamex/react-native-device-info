@@ -73,6 +73,7 @@ declare const _default: {
   getMaxMemory: () => number;
   getTotalDiskCapacity: () => number;
   getFreeDiskStorage: () => number;
+  getTotalDiskStorage: () => number;
   getBatteryLevel: () => Promise<number>;
   getPowerState: () => Promise<PowerState>;
   isBatteryCharging: () => Promise<boolean>;

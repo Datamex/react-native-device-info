@@ -59,6 +59,7 @@ declare module.exports: {
   getMaxMemory: () => number,
   getTotalDiskCapacity: () => number,
   getFreeDiskStorage: () => number,
+  getTotalDiskStorage: () => number,
   getBatteryLevel: () => Promise<number>,
   getPowerState: () => Promise<Object>,
   isBatteryCharging:() => Promise<boolean>,
