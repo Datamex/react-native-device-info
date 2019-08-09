@@ -24,13 +24,13 @@ Device Information for [React Native](https://github.com/facebook/react-native).
 Using npm:
 
 ```shell
-npm install --save https://github.com/YuriRPGarcia/react-native-device-info
+npm install --save https://github.com/Datamex/react-native-device-info
 ```
 
 or using yarn:
 
 ```shell
-yarn add https://github.com/YuriRPGarcia/react-native-device-info
+yarn add https://github.com/Datamex/react-native-device-info
 ```
 
 > ⚠️ As of version 2.1.1 the package can be loaded async to improve start up time on Android [Refer to this PR for more information](https://github.com/react-native-community/react-native-device-info/pull/680)
@@ -290,6 +290,7 @@ import DeviceInfo from 'react-native-device-info';
 | [getFingerprint()](#getfingerprint)                               | `string`            |  ❌  |   ✅    |   ❌    | ?      |
 | [getFontScale()](#getfontscale)                                   | `number`            |  ✅  |   ✅    |   ❌    | 0.15.0 |
 | [getFreeDiskStorage()](#getfreediskstorage)                       | `number`            |  ✅  |   ✅    |   ❌    | 0.15.0 |
+| [getTotalDiskStorage()](#getTotalDiskStorage)                     | `number`            |  ✅  |   ✅    |   ❌    | 0.15.0 |
 | [getHardware()](#gethardware)                                     | `string`            |  ❌  |   ✅    |   ❌    | ?      |
 | [getHost()](#gethost)                                             | `string`            |  ❌  |   ✅    |   ❌    | ?      |
 | [getIPAddress()](#getipaddress)                                   | `Promise<string>`   |  ✅  |   ✅    |   ✅    | 0.12.0 |
@@ -331,7 +332,7 @@ import DeviceInfo from 'react-native-device-info';
 | [isAutoDateAndTime()](#isAutoDateAndTime)                         | `Promise<boolean>`  |  ❌  |   ✅    |   ❌    | 0.29.0 |
 | [isAutoTimeZone()](#isAutoTimeZone)                               | `Promise<boolean>`  |  ❌  |   ✅    |   ❌    | 0.29.0 |
 | [supported32BitAbis()](#supported32BitAbis)                       | `string[]`          |  ❌  |   ✅    |   ❌    | ?      |
-| [supported64BitAbis()](#supported64BitAbis                        | `string[]`          |  ❌  |   ✅    |   ❌    | ?      |
+| [supported64BitAbis()](#supported64BitAbis)                        | `string[]`          |  ❌  |   ✅    |   ❌    | ?      |
 | [supportedABIs()](#supportedABIs)                                 | `string[]`          |  ✅  |   ✅    |   ❌    | 1.1.0  |
 | [hasSystemFeature()](#hassystemfeaturefeature)                    | `Promise<boolean>`  |  ❌  |   ✅    |   ❌    | ?      |
 | [getSystemAvailableFeatures()](#getSystemAvailableFeatures)       | `Promise<string[]>` |  ❌  |   ✅    |   ❌    | ?      |
@@ -700,6 +701,19 @@ const freeDiskStorage = DeviceInfo.getFreeDiskStorage();
 > from the protected internal storage and can be mounted as a filesystem on a computer.
 
 ---
+
+### getFreeDiskStorage()
+
+Gets total storage size, in bytes.
+
+**Examples**
+
+```js
+const totalDiskStorage = DeviceInfo.getTotalDiskStorage();
+
+// Android: 17179869184
+// iOS: 17179869184
+```
 
 ### getHardware()
 
