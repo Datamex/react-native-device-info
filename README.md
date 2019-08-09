@@ -702,7 +702,7 @@ const freeDiskStorage = DeviceInfo.getFreeDiskStorage();
 
 ---
 
-### getFreeDiskStorage()
+### getTotalDiskStorage()
 
 Gets total storage size, in bytes.
 
